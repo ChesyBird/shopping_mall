@@ -9,6 +9,7 @@ import UpdateProduct from './products/UpdateProduct';
 import { useState } from 'react';
 import SignIn from './users/SignIn';
 import SignUp from './users/SignUp';
+import AdminPage from './users/AdminPage';
 
 function App() {
   // 로그인 상태 관리하기
@@ -16,16 +17,21 @@ function App() {
   // 로그인한 사용자 Id
   const [username, setUsername] = useState("");
 
+  // 로그인 한 사용자의 권한
+  const [userRole, setUserRole] = useState(""); //'user', 'admin'구분
+
   // 로그인 핸들러 함수
-  const handleLogin = (username) => {
+  const handleLogin = (username, role) => {
     setIsLoggedIn(true);
     setUsername(username); // 로그인 한 사용자 상태
+    setUserRole(role); // 로그인 한 사용자 권한 저장
   }
 
   // 로그아웃 핸들러
   const handleLogout = () =>{
     setIsLoggedIn(false);
     setUsername(""); // 로그아웃 시 사용자 상태 초기화
+    setUserRole("");
   }
 
   return (
@@ -35,6 +41,7 @@ function App() {
           <Header
             isLoggedIn={isLoggedIn}
             username={username}
+            userRole={userRole}
             onLogout={handleLogout}
           />
           <div className='container'>
@@ -48,6 +55,7 @@ function App() {
             {/* 회원 */}
             <Route path='/signin' element={<SignIn onLogin={handleLogin} />} />
             <Route path='/signup' element={<SignUp />} />
+            <Route path='/admin' element={<AdminPage userRole={userRole} />} />
           </Routes>
           </div>
         </BrowserRouter>
