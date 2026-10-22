@@ -48,8 +48,7 @@ const SignIn = ({onLogin}) => {
             setLoginResult("fail");
            }
         }catch(error){
-            alert("로그인 중 오류가 발생했습니다.");
-            console.log(error);
+            alert("로그인 중 오류가 발생했습니다.", error);
         }
     }
 

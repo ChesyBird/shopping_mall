@@ -1,12 +1,12 @@
-import { useNavigate, useParams } from "react-router-dom";
-import api from "../api/api"
 import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import api from "../api/api";
 
-// 해당 아이디로  상품 수정
+// 해당 아이디로 상품을 수정
 const UpdateProduct = () => {
     const {id} = useParams();
 
-    const [formData, setFormData] = useState({
+    const [ formData, setFormData ] = useState({
         productName: "",
         price: "",
         description: ""
@@ -15,48 +15,46 @@ const UpdateProduct = () => {
     const { productName, price, description } = formData;
 
     const navigate = useNavigate();
-
+    
     // 수정할 상품 가져오기
-    useEffect(() => {
+    useEffect(()=>{
         const fetchProduct = async () => {
-            try{
-                // 서버(DB)에서 가져오기
+            try {
                 const response = await api.get(`/products/${id}`);
                 setFormData({
-                    // 필드 속성(name): value(db의 칼럼값)
+                    // 필드네임속성(name): value(db의 칼럼값)
                     productName: response.data.product_name,
                     price: response.data.price,
                     description: response.data.description
-                })
-            }catch(error){
-                alert("상품 조회중 에러가 발생했습니다.", error);
+            })
+            } catch (error) {
+                alert("상품 조회 중 에러 발생", error);
             }
-        } // fetchProduct() 닫기
-        fetchProduct(); // 호출
-    }, [id]);
+        }
+        fetchProduct();
+    }, [id])
 
-    // 입력값 변경 핸들러
+    // 입력값 변경
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({...formData, [name]: value});
     }
 
-    // 폼 처리 제출 핸들러
+    // 폼 처리
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         // 수정된 데이터를 서버로 보내기
-        try{
+        try {
             await api.put(`/products/${id}`, formData);
             alert("상품이 성공적으로 수정되었습니다.");
-            navigate(`/products/${id}`); // 상세 페이지로 이동
-        }catch(error){
-            console.log(error);
-            alert("상품 수정 중 오류가 발생했습니다.", error);
+            navigate(`/products/${id}`); // 수정 후 상세 페이지로 이동
+        } catch (error) {
+            alert("상품 수정 중 오류가 발생하였습니다.", error);
         }
     }
 
-    // 취소 버튼 클릭시 초기화
+    // 취소 버튼을 클릭 시 초기화
     const handleCancel = () => {
         setFormData({
             productName: "",
@@ -65,26 +63,26 @@ const UpdateProduct = () => {
         });
     }
 
-    return(
+    return (
         <div className="update-product">
             <h2>상품 수정</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="productName">상품명</label>
-                    <input 
-                        type="text" 
-                        id="productName"
+                    <input
+                        type="text"
                         name="productName"
+                        id="productName"
                         value={productName}
                         onChange={handleInputChange}
                     />
                 </div>
                 <div>
                     <label htmlFor="price">가격</label>
-                    <input 
-                        type="number" 
-                        id="price"
+                    <input
+                        type="number"
                         name="price"
+                        id="price"
                         value={price}
                         onChange={handleInputChange}
                     />
@@ -92,8 +90,8 @@ const UpdateProduct = () => {
                 <div>
                     <label htmlFor="description">설명</label>
                     <textarea
-                        id="description"
                         name="description"
+                        id="description"
                         rows={5}
                         value={description}
                         onChange={handleInputChange}
@@ -107,5 +105,4 @@ const UpdateProduct = () => {
         </div>
     )
 }
-
 export default UpdateProduct;

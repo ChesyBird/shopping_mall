@@ -3,40 +3,42 @@ import api from "../api/api";
 import { useEffect, useState } from "react";
 
 const ProductList = () => {
-    const [products, setProducts] = useState([]);
+    const [ products, setProducts ] = useState([]);
 
-    // 검색 키워드 상태 관리 
-    const [searchKeyword, setSearchKeyword] = useState("");
+    // 검색 키워드 상태 관리
+    const [ searchKeyword, setSearchKeyword] = useState("");
 
     // db에서 데이터 가져오기
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try{
-                //'http://localhost:8000/api/products'
+    useEffect(()=>{
+        const fetchProducts = async ()=>{
+            try {
+                // 'http://localhost:8000/api/products'
                 const response = await api.get('/products');
-                setProducts(response.data) // data 속성 불러줌
-            }catch(error){
-                console.log("상품 목록 조회 에러: ", err);
+                setProducts(response.data) // data 속성을 불러줘야함
+            } catch (error) {
+                console.log("상품 목록 조회 에러 : ", error);
+                                
             }
         }
-        fetchProducts();  //함수 호출해야 실행됨
-    }, []); //최초 1번 렌더링
+        fetchProducts(); // 함수 호출해야 실행
+    }, []); // 최초 1회 렌더링
 
     // 검색된 상품(목록) 필터링 구현
     const filterProducts = products.filter(product => 
         product.product_name.toLowerCase().includes(searchKeyword.toLocaleLowerCase())
-    )
+    );
 
-    return(
+    return (
         <div className="product-list">
             {/* 검색 기능 */}
             <div className="search-bar">
-                <input 
-                    type="text" 
+                <input
+                    type="text"
                     placeholder="상품명으로 검색"
-                    onChange={(e) => setSearchKeyword(e.target.value)}
+                    onChange={(e)=> setSearchKeyword(e.target.value)}
                 />
             </div>
+
             {/* 상품 목록 */}
             <table>
                 <thead>
@@ -58,8 +60,8 @@ const ProductList = () => {
             </table>
             <div className="btn-add">
                 <Link to="/products/new">
-                    <button type="button">상품 등록</button>   
-                </Link> 
+                <button type="button">상품 등록</button>
+                </Link>
             </div>
         </div>
     )

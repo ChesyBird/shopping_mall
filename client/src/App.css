@@ -1,191 +1,191 @@
 /* Header 스타일 */
-.header{
-  background-color: #333;
-  padding: 20px;
+.header {
+    background-color: #333;
+    padding: 15px;
 }
-.header a{
-  color: yellowgreen;
-  margin: 0 16px;
-  text-decoration: none;
+.header a {
+    color: #ececdd;
+    margin: 0px 16px;
+    text-decoration: none;
 }
-/* 마우스 올렸을때 스타일 */
-.header a:hover{
-  color: #eee;
+.header-user {
+    display: inline-flex;
+    text-align: center;
+    gap: 16px;
+    color: #ececdd;
 }
-.header-user{
-  display: inline-flex; 
-  text-align: center;
-  gap: 16px;
-  color: #f5f5f5;
+.logout-btn {
+    padding: 6px 12px;
+    border: 1px solid #f7ec53;
+    background-color: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #ececdd;
 }
-.header-user .logout-btn{
-  padding: 6px 12px;
-  border: 1px solid yellowgreen;
-  background-color: transparent;
-  border-radius: 6px;
-  color: yellowgreen;
-  cursor: pointer;
+
+/* 마우스를 올린 상태 */
+.header a:hover {
+    color: #f7ec53;
 }
 
 /* Main 스타일 */
-.main img{margin-top: 20px;}
+.main img {
+    margin-top: 20px;
+}
 
 /* 상품 목록 스타일 */
 .product-list .search-bar input{
-  width: 300px;
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+    width: 50%;
+    padding: 10px 12px;
+    border: 1px solid #a8a8a8;
+    border-radius: 10px;
+}
+.product-list table {
+    width: 60%;
+    margin: 20px auto;
+    border: 1px solid #a7a7a7;
+    border-collapse: collapse;
+}
+.product-list table thead {
+    background-color: #eee;
+}
+.product-list table th, td {
+    border: 1px solid #a7a7a7;
+    padding: 6px;
+}
+.product-list .btn-add {
+    text-align: right;
+    margin-right: 20%;
+}
+.product-list .btn-add button {
+    padding: 8px 16px;
 }
 
-.product-list table{
-  width: 60%;
-  margin: 20px auto;
-  border: 1px solid #ccc;
-  border-collapse: collapse;
+/* 상품 상세페이지 스타일 */
+.product-info .detail {
+    width: 40%;
+    margin: 20px auto;
+    background-color: #fffce4;
+    padding: 20px;
+    border-radius: 8px;
 }
-.product-list table thead{
-  background-color: #eee;
+.product-info .detail p {
+    margin: 16px;
 }
-.product-list table th, td{
-  border: 1px solid #ccc;
-  padding: 6px;
-}
-.product-list .btn-add{
-  text-align: right;
-  margin-right: 20%;
-}
-.product-list .btn-add button{
-  padding: 8px 16px;
+.product-info button {
+    padding: 8px 12px;
+    cursor: pointer;
+    margin: 5px;
 }
 
-/* 상품 상세 페이지 스타일 */
-.product-info .detail{
-  width: 40%;
-  margin: 20px auto;
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 8px;
+/* 상품 등록 스타일 */
+.add-product form {
+    width: 30%;
+    margin: 20px auto;
 }
-.product-info .detail p{
-  margin: 16px;
+.add-product form label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
 }
-.product-info button{
-  padding: 6px 12px;
-  margin: 5px;
-  cursor: pointer;
+.add-product form input, .add-product form textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 16px;
 }
-
-/* 상품 등록 폼 */
-.add-product form{
-  width: 30%;
-  margin: 20px auto;
+.add-product form textarea {
+    resize: vertical; /* 크기조절방향(수직) */
 }
-.add-product form label{
-  display: block;  /* 수직 배치 */
-  margin-bottom: 8px;
-  text-align: left;
-}
-.add-product form input, 
-.add-product form textarea{
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-}
-.add-product form textarea{
-  resize: vertical; /* 크기 조절 방향(수직) */
-}
-.add-product form button{
-  margin: 4px;
-  padding: 6px 12px;
-  cursor: pointer;
+.add-product form button {
+    padding: 8px 12px;
+    cursor: pointer;
+    margin: 4px;
 }
 
-/* 상품 수정 폼 */
-.update-product form{
-  width: 30%;
-  margin: 20px auto;
+/* 상품 수정 스타일 */
+.update-product form {
+    width: 30%;
+    margin: 20px auto;
 }
-.update-product form label{
-  display: block;  /* 수직 배치 */
-  margin-bottom: 8px;
-  text-align: left;
+.update-product form label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
 }
-.update-product form input, 
-.update-product form textarea{
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
+.update-product form input, .update-product form textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 16px;
 }
-.update-product form textarea{
-  resize: vertical; /* 크기 조절 방향(수직) */
+.update-product form textarea {
+    resize: vertical; /* 크기조절방향(수직) */
 }
-.update-product form button{
-  margin: 4px;
-  padding: 6px 12px;
-  cursor: pointer;
+.update-product form button {
+    padding: 8px 12px;
+    cursor: pointer;
+    margin: 4px;
 }
 
 /* 로그인 스타일 */
-.sign-in form{
-  width: 30%;
-  margin: 20px auto;
-  text-align: left;
+.sign-in form {
+    width: 30%;
+    margin: 20px auto;
+    text-align: left;
 }
-.sign-in form input{
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
+.sign-in input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
 }
-.sign-in form button{
-  width: 100%;
-  padding: 8px 12px;
-  margin-left: 3%;
+.sign-in form button {
+    width: 100%;
+    padding: 8px 12px;
+    margin-left: 3%;
 }
 
-/* 회원 가입 스타일 */
-.sign-up form{
-  width: 40%;
-  margin: 20px auto;
-  text-align: left;
+/* 회원가입 스타일 */
+.sign-up form {
+    width: 40%;
+    margin: 20px auto;
+    text-align: left;
 }
-.sign-up form label{
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
+.sign-up form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 .sign-up form input,
+.sign-up form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+.sign-up form select {
+    width: 160px;
+    padding: 10px 12px;
+}
+.gender-title {
+    margin: 8px 0px;
+}
+.gender-option {
+    display: flex;
+    gap: 24px;
+}
+.gender-option label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+}
+.gender-option input[type="radio"] {
+    width: auto;
+    padding: 0;
+    margin: 0;
+}
 .sign-up form textarea{
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
+    resize: vertical;
 }
-.sign-up form select{
-  width: 160px;
-  padding: 10px 12px;
-  margin-bottom: 16px;
-}
-.sign-up form .gender-title{margin-bottom: 8px;}
-.sign-up form .gender-options{
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-  margin-bottom: 16px;
-}
-.sign-up form .gender-options label{
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: normal;
-  margin-bottom: 0;
-}
-.sign-up form .gender-options input[type="radio"]{
-  width: auto;
-  padding: 0;
-  margin: 0;
-}
-.sign-up form textarea{resize: vertical;}
-.sign-up form button{
-  padding: 8px 16px;
-  margin: 5px;
+.sign-up form button {
+    padding: 8px 12px;
+    margin: 5px;
 }
