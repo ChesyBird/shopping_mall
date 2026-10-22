@@ -7,7 +7,7 @@ const app = express();
 
 // 클라우드 컴에 배포
 // process.env : 실행 환경의 환경변수가 객체형태로 들어있음
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5432;
 
 // cors(Cross-Origin Resource Sharing) : 교차출처 리소스 공유 라이브러리
 // 브라우저가 보안상의 이유로 api 요청을 차단하는 것을 방지

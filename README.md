@@ -33,3 +33,10 @@ npm i react-router-dom
                   email(이메일),<br>
                   role(권한),<br>
                   created_at(가입일)
+
+### Render 배포 환경 변수
+- 백엔드 서비스의 `CLIENT_URL`에 배포한 프런트엔드의 전체 주소를 설정합니다.
+- 프런트엔드 서비스의 `VITE_API_URL`에 백엔드 주소와 `/api`를 붙여 설정합니다.
+  - 예: `https://<backend-service>.onrender.com/api`
+- `VITE_API_URL`은 프런트엔드 빌드 시점에 반영되므로, Render 환경 변수를 추가하거나 수정한 뒤 프런트엔드를 다시 배포해야 합니다.
+- `VITE_API_URL`이 없는 경우 로컬 개발에서만 `http://localhost:8000/api`를 사용합니다.
