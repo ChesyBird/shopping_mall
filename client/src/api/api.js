@@ -1,8 +1,9 @@
-import axios from 'axios';
+import axios from 'axios'
 
-// VITE_API_URL은 배포된 API 주소이며, Vite 빌드 시점에 설정해야 합니다.
+//API 서버의 기본 URL 지정
+// VITE_API_URL- Render가 제공하는 API 주소
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:8000/api' : undefined),
+    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api',
 })
 
 export default api;
