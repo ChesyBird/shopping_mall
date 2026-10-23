@@ -189,3 +189,39 @@
     padding: 8px 12px;
     margin: 5px;
 }
+
+/* 관리자 페이지 스타일 */
+.admin-page {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+}
+.admin-cards {
+    display: flex;
+    gap: 16px;
+    margin: 20px auto;
+}
+.admin-cards .admin-card {
+    flex: 1;
+    padding: 16px;
+    background-color: rgb(216, 255, 166);
+    border-radius: 8px;
+}
+.admin-card:hover {
+    background-color: rgb(155, 201, 96);
+}
+.admin-card p {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.admin-page table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+.admin-page th, td {
+    border: 1px solid #ccc;
+    padding: 6px;
+}
+.admin-page thead {
+    background-color: #eee;
+}

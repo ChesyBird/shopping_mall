@@ -28,6 +28,14 @@ const ProductList = () => {
         product.product_name.toLowerCase().includes(searchKeyword.toLocaleLowerCase())
     );
 
+    const handleClick = (e) =>{
+        // admin권한이 없으면 블럭 실행
+        if(userRole != "admin"){
+            e.preventDefault();
+            alert("상품 등록은 관리자만 가능합니다.");
+        }
+    }
+
     return (
         <div className="product-list">
             {/* 검색 기능 */}
@@ -59,7 +67,7 @@ const ProductList = () => {
                 </tbody>
             </table>
             <div className="btn-add">
-                <Link to="/products/new">
+                <Link to="/products/new" onClick={handleClick}>
                 <button type="button">상품 등록</button>
                 </Link>
             </div>
