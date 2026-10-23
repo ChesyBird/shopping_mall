@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import api from "../api/api";
 import { useEffect, useState } from "react";
 
-const ProductList = () => {
+const ProductList = ({userRole}) => {
     const [ products, setProducts ] = useState([]);
 
     // 검색 키워드 상태 관리

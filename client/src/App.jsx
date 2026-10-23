@@ -48,7 +48,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Main />} />
             {/* 상품 */}
-            <Route path='/products' element={<ProductList />} />
+            <Route path='/products' element={<ProductList userRole={userRole} />} />
             <Route path='/products/:id' element={<ProductInfo />} />
             <Route path='/products/new' element={<AddProduct />} />
             <Route path='/products/update/:id' element={<UpdateProduct />} />
